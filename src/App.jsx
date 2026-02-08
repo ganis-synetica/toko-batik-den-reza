@@ -1,26 +1,28 @@
 import { useState } from 'react'
 
-// Product data
+// Product data - Authentic Jogja style (Hamzah Batik inspired)
 const products = {
   batik: [
-    { id: 1, name: 'Kemeja Batik Parang Rusak', price: 'Rp 350.000', image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=500&fit=crop', category: 'Kemeja' },
-    { id: 2, name: 'Dress Batik Kawung', price: 'Rp 425.000', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=500&fit=crop', category: 'Dress' },
-    { id: 3, name: 'Blouse Batik Truntum', price: 'Rp 275.000', image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop', category: 'Blouse' },
-    { id: 4, name: 'Kemeja Batik Sido Mukti', price: 'Rp 385.000', image: 'https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=400&h=500&fit=crop', category: 'Kemeja' },
-    { id: 5, name: 'Kain Batik Tulis Jogja', price: 'Rp 750.000', image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=500&fit=crop', category: 'Kain' },
-    { id: 6, name: 'Sarung Batik Premium', price: 'Rp 450.000', image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=500&fit=crop', category: 'Sarung' },
+    { id: 1, name: 'Kemeja Batik Parang Rusak', price: 'Rp 350.000', image: 'https://images.unsplash.com/photo-1569089630965-daa2abca9d43?w=400&h=500&fit=crop', category: 'Kemeja' },
+    { id: 2, name: 'Dress Batik Kawung', price: 'Rp 425.000', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=500&fit=crop', category: 'Dress' },
+    { id: 3, name: 'Blouse Batik Truntum', price: 'Rp 275.000', image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=400&h=500&fit=crop', category: 'Blouse' },
+    { id: 4, name: 'Kemeja Batik Sido Mukti', price: 'Rp 385.000', image: 'https://images.unsplash.com/photo-1584184924103-e310d9dc82fc?w=400&h=500&fit=crop', category: 'Kemeja' },
+    { id: 5, name: 'Kain Batik Tulis Jogja', price: 'Rp 750.000', image: 'https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=400&h=500&fit=crop', category: 'Kain' },
+    { id: 6, name: 'Sarung Batik Premium', price: 'Rp 450.000', image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=500&fit=crop', category: 'Sarung' },
   ],
   tas: [
-    { id: 7, name: 'Tas Kulit Batik Kombinasi', price: 'Rp 525.000', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=500&fit=crop', category: 'Tas' },
-    { id: 8, name: 'Clutch Batik Elegan', price: 'Rp 185.000', image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&h=500&fit=crop', category: 'Clutch' },
-    { id: 9, name: 'Tote Bag Batik Canvas', price: 'Rp 225.000', image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&h=500&fit=crop', category: 'Tote' },
+    { id: 7, name: 'Tas Anyaman Batik', price: 'Rp 325.000', image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=500&fit=crop', category: 'Tas' },
+    { id: 8, name: 'Clutch Batik Elegan', price: 'Rp 185.000', image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=400&h=500&fit=crop', category: 'Clutch' },
+    { id: 9, name: 'Tote Bag Batik Canvas', price: 'Rp 225.000', image: 'https://images.unsplash.com/photo-1597633125097-5a9ae3ddb6a1?w=400&h=500&fit=crop', category: 'Tote' },
   ],
   aksesoris: [
-    { id: 10, name: 'Sandal Batik Kulit', price: 'Rp 275.000', image: 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&h=500&fit=crop', category: 'Sandal' },
-    { id: 11, name: 'Dompet Batik Pria', price: 'Rp 165.000', image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=500&fit=crop', category: 'Dompet' },
-    { id: 12, name: 'Ikat Pinggang Batik', price: 'Rp 145.000', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop', category: 'Aksesoris' },
-    { id: 13, name: 'Selendang Batik Sutra', price: 'Rp 325.000', image: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&h=500&fit=crop', category: 'Selendang' },
+    { id: 10, name: 'Sandal Kulit Jogja', price: 'Rp 275.000', image: 'https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=400&h=500&fit=crop', category: 'Sandal' },
+    { id: 11, name: 'Dompet Kulit Batik', price: 'Rp 165.000', image: 'https://images.unsplash.com/photo-1606503153255-59d8b2e4c3e6?w=400&h=500&fit=crop', category: 'Dompet' },
+    { id: 12, name: 'Wayang Kulit Mini', price: 'Rp 245.000', image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=500&fit=crop', category: 'Kerajinan' },
+    { id: 13, name: 'Selendang Batik Sutra', price: 'Rp 325.000', image: 'https://images.unsplash.com/photo-1606503825008-909a67e63c3d?w=400&h=500&fit=crop', category: 'Selendang' },
     { id: 14, name: 'Kipas Batik Kayu', price: 'Rp 85.000', image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=500&fit=crop', category: 'Souvenir' },
+    { id: 15, name: 'Blangkon Jogja', price: 'Rp 125.000', image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=400&h=500&fit=crop', category: 'Aksesoris' },
+    { id: 16, name: 'Keris Miniatur', price: 'Rp 350.000', image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=500&fit=crop', category: 'Kerajinan' },
   ]
 }
 
@@ -100,13 +102,13 @@ function App() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=400&fit=crop" 
-                alt="Batik Jogja"
+                src="https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=300&h=400&fit=crop" 
+                alt="Batik Tulis Jogja"
                 className="rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500"
               />
               <img 
                 src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=300&h=400&fit=crop" 
-                alt="Kain Batik"
+                alt="Kain Batik Tradisional"
                 className="rounded-2xl shadow-2xl mt-8 transform hover:scale-105 transition duration-500"
               />
             </div>
@@ -211,13 +213,13 @@ function App() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=500&fit=crop" 
-                alt="Proses Membatik"
+                src="https://images.unsplash.com/photo-1569089630965-daa2abca9d43?w=400&h=500&fit=crop" 
+                alt="Proses Membatik Tulis"
                 className="rounded-2xl shadow-lg"
               />
               <img 
-                src="https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=400&h=500&fit=crop" 
-                alt="Koleksi Batik"
+                src="https://images.unsplash.com/photo-1584184924103-e310d9dc82fc?w=400&h=500&fit=crop" 
+                alt="Koleksi Batik Jogja"
                 className="rounded-2xl shadow-lg mt-8"
               />
             </div>
